@@ -15,5 +15,10 @@ public class TicketManager {
             if (t.getId() == Id)return t;
         }
         return null ;
+    } public boolean closeTicket(int id){
+        Ticket t = findById(id);
+        if (t == null) return false;
+        t.setStatus("CLOSED");
+        return true ;
     }
 }
